@@ -4,47 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="80dp"
     android:orientation="vertical"
-    android:layout_marginBottom="100dp"
     tools:context=".MainActivity">
 
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="EMI"-->
-<!--        android:textColor="@color/purple_700"-->
-<!--        android:textSize="25dp"-->
-<!--        android:background="@color/white"-->
-<!--        android:layout_margin="30dp"-->
-<!--        android:gravity="center"/>-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="50dp"
+        android:background="#fafafa"
+        android:gravity="center"
+        android:text="EMI \n Calculator"
+        android:textColor="#3196e2"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:layout_margin="10dp"
-        android:hint="Total Amount"/>
+        android:layout_marginTop="40dp"
+        android:inputType="number"
+        android:hint="Total Amount" />
 
     <EditText
         android:id="@+id/amtint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Intrest"/>
+        android:inputType="numberDecimal"
+        android:hint="Intrest" />
 
     <EditText
-        android:id="@+id/peri"
+        android:id="@+id/months"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:hint="Period "/>
+        android:inputType="number"
+        android:hint="Months " />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="10dp"
         android:layout_weight="1"
+        android:gravity="center"
         android:orientation="horizontal">
 
         <Button
@@ -52,16 +57,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="4"
-            android:backgroundTint="@color/purple_700"
+            android:backgroundTint="#e63946"
             android:text="Calculate"
             android:textColor="@color/white" />
 
-<!--        <Button-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_weight="1"-->
-<!--            android:backgroundTint="@color/teal_700"-->
-<!--            android:text="Reset" />-->
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#457b9d"
+            android:text="Reset"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
@@ -69,28 +76,31 @@
         android:id="@+id/toemi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textSize="25dp"
         android:layout_margin="10dp"
-        android:text="Monthly EMI"/>
-
-    <TextView
-        android:id="@+id/topay"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
+        android:text="Monthly EMI : "
+        android:textColor="#3196e2"
         android:textSize="25dp"
-        android:layout_margin="10dp"
-        android:text="Total Amount"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/toint"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:textColor="#000000"
-        android:textSize="25dp"
         android:layout_margin="10dp"
-        android:text="Total intrest"/>
+        android:layout_marginBottom="40dp"
+        android:text="Total intrest : "
+        android:textColor="#3196e2"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/topay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Total Amount : "
+        android:textColor="#3196e2"
+        android:textSize="25dp"
+        android:textStyle="bold" />
 
 </LinearLayout>

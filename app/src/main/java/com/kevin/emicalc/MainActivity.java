@@ -11,22 +11,23 @@ import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText amount , amtint, peri;
+    EditText amount , amtint, months;
     TextView toemi, toint, topay;
-    Button button;
+    Button button, reset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-    amount = findViewById(R.id.amount);
-    amtint = findViewById(R.id.amtint);
-    peri = findViewById(R.id.peri);
+    amount = (EditText) findViewById(R.id.amount);
+    amtint = (EditText) findViewById(R.id.amtint);
+    months = (EditText) findViewById(R.id.months);
     button = findViewById(R.id.button);
     toemi = findViewById(R.id.toemi);
     toint = findViewById(R.id.toint);
     topay = findViewById(R.id.topay);
+    reset = findViewById(R.id.reset);
 
     button.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
             int amt = Integer.parseInt(amount.getText().toString());
             double rest = Double.parseDouble(amtint.getText().toString());
-            int mon = Integer.parseInt(peri.getText().toString());
+            int mon = Integer.parseInt(months.getText().toString());
 
             double r = rest/(12*100);
             double cal1 = 1;
@@ -53,6 +54,15 @@ public class MainActivity extends AppCompatActivity {
 
         }
     });
+    reset.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            amount.setText(" ");
+            amtint.setText(" ");
+            months.setText(" ");
+        }
+    });
+
 
     }
 }
